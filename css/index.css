@@ -1,0 +1,73 @@
+:root { color: #5a2d24; background: #f7d98d; font-family: "Microsoft YaHei", Arial, sans-serif; }
+* { box-sizing: border-box; }
+html, body { min-width: 320px; margin: 0; background: #f7d98d; }
+a:focus-visible, input:focus-visible { outline: 3px solid #fff6c6; outline-offset: 3px; }
+.mobile-page { width: min(100%, 540px); min-height: 100vh; margin: 0 auto; background: #f7d98d; box-shadow: 0 0 32px rgba(134, 63, 34, .15); }
+.screen-reader-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.artwork-section { position: relative; line-height: 0; background: #f7d98d; }
+.artwork-section img { display: block; width: 100%; height: auto; }
+.activity-section { z-index: 1; overflow: hidden; background: transparent; }
+.activity-background { position: relative; z-index: 0; }
+.activity-content { position: absolute; z-index: 1; inset: 0; }
+.activity-grid { position: absolute; z-index: 2; top: 8.2%; left: 5.5%; display: grid; width: 89%; margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 1.5%; row-gap: 1.6%; }
+.activity-grid li { min-width: 0; }
+.activity-card { width: 100%; height: auto; aspect-ratio: 271 / 297; object-fit: cover; }
+.activity-grid li:nth-child(9) { grid-column: 2; }
+.activity-grid li:nth-child(10) { grid-column: 3; }
+.activity-maple-leaf { position: absolute; z-index: 3; top: 76%; left: -1%; width: 14.58% !important; pointer-events: none; }
+.activity-section .hotspot--activity-reward { z-index: 4; }
+.activity-claim-button { width: 100% !important; height: auto; }
+.reward-section { overflow: hidden; }
+.reward-background { position: relative; z-index: 0; }
+.reward-content { position: absolute; z-index: 1; inset: 0; }
+.reward-panel { position: absolute; z-index: 1; top: 18.12%; left: 9.9%; width: 80.21% !important; pointer-events: none; }
+.reward-grid { position: absolute; z-index: 2; top: 33.3%; left: 19.2%; display: grid; width: 61.6%; margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; column-gap: 1.3%; row-gap: 2.2%; }
+.reward-grid li { min-width: 0; }
+.reward-card { width: 100%; height: auto; object-fit: cover; }
+.reward-grid li:nth-child(5), .reward-grid li:nth-child(6) { grid-column: span 2; }
+.reward-grid li:nth-child(5) { overflow: hidden; aspect-ratio: 568 / 298; }
+.reward-grid li:nth-child(5) .reward-card { transform: translateY(-16.76%); }
+.reward-section .hotspot--server-booking, .reward-section .hotspot--team-gathering { z-index: 3; }
+.reward-claim-button, .reward-team-button { width: 100% !important; height: auto; }
+.hotspot { position: absolute; z-index: 1; display: block; overflow: hidden; color: transparent; font-size: 0; line-height: 0; text-decoration: none; }
+.hotspot:active { filter: brightness(.82); transform: scale(.98); }
+.hotspot:focus-visible { outline-color: #b8462d; }
+.hotspot--official { top: 6%; right: 22%; width: 17%; height: 10%; }
+.hotspot--hero-download { bottom: 4.8%; left: 39%; width: 22%; height: 8%; }
+.hotspot--activity-reward { top: 91.2%; left: 37.3%; width: 25.4%; height: 5.8%; }
+.hotspot--server-booking { top: 88.7%; left: 27%; width: 13.9%; height: 4.8%; }
+.hotspot--team-gathering { top: 88.7%; left: 58.9%; width: 13.9%; height: 4.8%; }
+.benefit-card { position: absolute; z-index: 1; top: 22.83%; left: 39.17%; width: 23.44% !important; }
+.benefit-qr-frame { position: absolute; z-index: 1; top: 67.78%; left: 33.33%; width: 34.9% !important; }
+.benefit-qr { position: absolute; z-index: 2; width: 11.35% !important; }
+.benefit-qr--official { top: 71.31%; left: 36.72%; }
+.benefit-qr--download { top: 71.31%; left: 52.92%; }
+.hotspot--benefit-claim { top: 56.1%; left: 42.1%; width: 16.6%; height: 6.8%; }
+.benefit-claim-button { width: 100% !important; height: auto; }
+.hotspot.gray { pointer-events: none; filter: grayscale(1); opacity: .55; }
+.feedback-toast { position: fixed; z-index: 30; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); max-width: calc(100% - 32px); margin: 0; padding: 11px 14px; color: #fff8e9; background: rgba(84, 31, 19, .94); border: 1px solid #f3bc62; border-radius: 8px; font-size: 13px; line-height: 1.5; }
+.booking-modal { position: fixed; z-index: 40; inset: 0; display: grid; place-items: center; padding: 20px; }.booking-modal[hidden] { display: none; }.booking-modal__backdrop { position: absolute; inset: 0; background: rgba(56, 20, 23, .72); }.booking-modal__content { position: relative; width: min(420px, 100%); padding: 42px 24px 28px; color: #672b25; background: #fff2cf; border: 3px solid #d64e3d; box-shadow: 0 20px 58px rgba(54, 17, 16, .35); }.booking-modal__close { position: absolute; top: 8px; right: 12px; color: #a8322d; font-family: Arial, sans-serif; font-size: 28px; font-weight: 300; line-height: 1; text-decoration: none; }.booking-modal__eyebrow { margin: 0 0 10px; color: #b14130; font-size: 11px; font-weight: 700; letter-spacing: .12em; }.booking-modal h2 { margin: 0 0 13px; color: #922b25; font-size: 27px; }.booking-modal__copy { margin: 0 0 22px; color: #8c6155; font-size: 13px; line-height: 1.75; }.booking-modal label { display: block; margin-bottom: 8px; color: #8e3028; font-size: 12px; font-weight: 700; }.booking-modal input { width: 100%; height: 46px; margin-bottom: 15px; padding: 0 13px; color: #5a2926; background: #fff9e9; border: 1px solid #d69d77; }.booking-modal input:focus { border-color: #ce4435; outline: 0; }.booking-modal__submit { display: grid; min-height: 47px; place-items: center; color: #fffbea; background: #e84271; border-radius: 23px; font-size: 15px; font-weight: 700; text-decoration: none; }.booking-modal__tip { margin: 15px 0 0; color: #ae8470; font-size: 11px; line-height: 1.6; }
+@media (min-width: 541px) { body { background: #e7c77d; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+.booking-modal__submit:active { filter: brightness(.88); transform: scale(.98); }
+
+/* 腾讯公共页脚会动态插入 #afooter，移动页中必须让它参与正常文档流，避免覆盖底部素材。 */
+#afooter {
+  position: static !important;
+  clear: both;
+  display: block !important;
+  width: min(100%, 540px) !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 24px 12px calc(24px + env(safe-area-inset-bottom)) !important;
+  box-sizing: border-box !important;
+  color: #6a4a38 !important;
+  background: #f7d98d !important;
+  font-size: 12px !important;
+  line-height: 1.7 !important;
+  text-align: center !important;
+}
+
+#afooter a { color: #6a4a38 !important; }

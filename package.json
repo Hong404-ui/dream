@@ -1,0 +1,10 @@
+{
+  "name": "menghuan-zhu-xian-anniversary",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/staticServer.mjs",
+    "build": "node scripts/verifyStatic.mjs"
+  }
+}
