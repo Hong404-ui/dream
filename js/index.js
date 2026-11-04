@@ -9,8 +9,16 @@
   var missingLinkActions = { 'official-site': true, download: true, 'activity-reward': true, 'reward-claim': true, 'team-gathering': true, 'anniversary-claim': true }
 
   function reportButtonClick(link) {
-    if (typeof window.PTTSendClick === 'function') {
-      window.PTTSendClick(link.dataset.trackType, link.dataset.trackId, link.dataset.trackLabel)
+    try {
+      if (window.EAS && typeof window.EAS.SendClick === 'function') {
+        window.EAS.SendClick({
+          e_c: 'a20211029mhzx5th.index.m.' + link.dataset.trackId,
+          ext1: link.dataset.trackType,
+          ext2: link.dataset.trackLabel
+        })
+      }
+    } catch (error) {
+      console.warn('EAS report unavailable', error)
     }
   }
 
@@ -49,6 +57,7 @@
 
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('booking-modal__backdrop')) {
+      reportButtonClick(event.target)
       closeBooking()
       return
     }
@@ -74,9 +83,7 @@
 
   document.getElementById('booking-form').addEventListener('submit', function (event) {
     event.preventDefault()
-    if (typeof window.PTTSendClick === 'function') {
-      window.PTTSendClick('order', 'booking-confirm', '确认预约')
-    }
+    reportButtonClick(document.querySelector('.booking-modal__submit'))
     submitBooking()
   })
 }())

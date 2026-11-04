@@ -1,3 +1,4 @@
+@import "reset.css";
 :root { color: #5a2d24; background: #f7d98d; font-family: "Microsoft YaHei", Arial, sans-serif; }
 * { box-sizing: border-box; }
 html, body { min-width: 320px; margin: 0; background: #f7d98d; }
@@ -6,15 +7,16 @@ a:focus-visible, input:focus-visible { outline: 3px solid #fff6c6; outline-offse
 .screen-reader-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .artwork-section { position: relative; line-height: 0; background: #f7d98d; }
 .artwork-section img { display: block; width: 100%; height: auto; }
-.activity-section { z-index: 1; overflow: hidden; background: transparent; }
+.activity-section { z-index: 1; aspect-ratio: 1920 / 1430; overflow: hidden; background: #fff6e0; }
+.activity-section .activity-scene { position: absolute; z-index: 0; top: -4.9%; left: 0; width: 100%; height: auto; -webkit-mask-image: linear-gradient(#000 0 82%, transparent 91%); mask-image: linear-gradient(#000 0 82%, transparent 91%); }
+.activity-section .activity-title { position: absolute; z-index: 2; top: -0.7%; left: 18.23%; width: 63.54%; height: auto; }
+.activity-content { position: absolute; z-index: 1; top: 12.45%; left: 17.32%; width: 65.36%; aspect-ratio: 1255 / 1169; }
 .activity-background { position: relative; z-index: 0; }
-.activity-content { position: absolute; z-index: 1; inset: 0; }
-.activity-grid { position: absolute; z-index: 2; top: 8.2%; left: 5.5%; display: grid; width: 89%; margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 1.5%; row-gap: 1.6%; }
+.activity-grid { position: absolute; z-index: 2; top: 4.28%; left: 4.46%; display: grid; width: 91%; height: 100%; margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(3, 25.4%); column-gap: 1.66%; row-gap: 2.95%; }
 .activity-grid li { min-width: 0; }
 .activity-card { width: 100%; height: auto; aspect-ratio: 271 / 297; object-fit: cover; }
 .activity-grid li:nth-child(9) { grid-column: 2; }
 .activity-grid li:nth-child(10) { grid-column: 3; }
-.activity-maple-leaf { position: absolute; z-index: 3; top: 76%; left: -1%; width: 14.58% !important; pointer-events: none; }
 .activity-section .hotspot--activity-reward { z-index: 4; }
 .activity-claim-button { width: 100% !important; height: auto; }
 .reward-section { overflow: hidden; }
@@ -34,7 +36,7 @@ a:focus-visible, input:focus-visible { outline: 3px solid #fff6c6; outline-offse
 .hotspot:focus-visible { outline-color: #b8462d; }
 .hotspot--official { top: 6%; right: 22%; width: 17%; height: 10%; }
 .hotspot--hero-download { bottom: 4.8%; left: 39%; width: 22%; height: 8%; }
-.hotspot--activity-reward { top: 91.2%; left: 37.3%; width: 25.4%; height: 5.8%; }
+.hotspot--activity-reward { top: 87.85%; left: 37.69%; width: 25.42%; height: auto; }
 .hotspot--server-booking { top: 88.7%; left: 27%; width: 13.9%; height: 4.8%; }
 .hotspot--team-gathering { top: 88.7%; left: 58.9%; width: 13.9%; height: 4.8%; }
 .benefit-card { position: absolute; z-index: 1; top: 22.83%; left: 39.17%; width: 23.44% !important; }
@@ -51,23 +53,3 @@ a:focus-visible, input:focus-visible { outline: 3px solid #fff6c6; outline-offse
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
 .booking-modal__submit:active { filter: brightness(.88); transform: scale(.98); }
 
-/* 腾讯公共页脚会动态插入 #afooter，移动页中必须让它参与正常文档流，避免覆盖底部素材。 */
-#afooter {
-  position: static !important;
-  clear: both;
-  display: block !important;
-  width: min(100%, 540px) !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: 0 !important;
-  margin: 0 auto !important;
-  padding: 24px 12px calc(24px + env(safe-area-inset-bottom)) !important;
-  box-sizing: border-box !important;
-  color: #6a4a38 !important;
-  background: #f7d98d !important;
-  font-size: 12px !important;
-  line-height: 1.7 !important;
-  text-align: center !important;
-}
-
-#afooter a { color: #6a4a38 !important; }

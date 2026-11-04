@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="all">
+    <meta name="author" content="Tencent-CP">
     <meta name="description" content="梦幻诛仙五周年庆典，专服开启，预约领取周年福利。">
     <meta name="keywords" content="梦幻诛仙,梦幻诛仙五周年,周年庆典,专服预约">
     <meta name="theme-color" content="#f7d98d">
@@ -12,6 +14,12 @@
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
+    <script>
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|HarmonyOS|OpenHarmony/i.test(navigator.userAgent) &&
+          !(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+        location.replace('index_pc.html' + location.search + location.hash);
+      }
+    </script>
     <main class="mobile-page" aria-label="梦幻诛仙五周年庆典">
       <section class="artwork-section artwork-section--hero" aria-labelledby="page-title">
         <img src="ossweb-img/mobile/hero.webp" width="1920" height="1230" alt="梦幻诛仙五周年主视觉，相约五载，再聚诛仙。" fetchpriority="high">
@@ -25,8 +33,10 @@
       </section>
 
       <section class="artwork-section activity-section" aria-label="十大周年活动">
-        <img class="activity-background" src="ossweb-img/mobile/activity/background.png" width="1255" height="1169" alt="五载狂欢，十大周年活动欢庆盛典背景。" loading="lazy">
+        <img class="activity-scene" src="ossweb-img/mobile/activity/scene-background.jpg" width="960" height="750" alt="" aria-hidden="true" loading="lazy">
+        <img class="activity-title" src="ossweb-img/mobile/activity/section-title-small.png" width="610" height="95" alt="五载狂欢，十大周年活动欢庆盛典" loading="lazy">
         <div class="activity-content">
+          <img class="activity-background" src="ossweb-img/mobile/activity/background.png" width="1255" height="1169" alt="" aria-hidden="true" loading="lazy">
           <ul class="activity-grid" aria-label="十大周年活动列表">
             <li><img class="activity-card" src="ossweb-img/mobile/activity/card-login-beast.png" width="271" height="297" alt="登录送神兽活动"></li>
             <li><img class="activity-card" src="ossweb-img/mobile/activity/card-fireworks.png" width="271" height="297" alt="盛世烟火活动"></li>
@@ -39,8 +49,6 @@
             <li><img class="activity-card" src="ossweb-img/mobile/activity/card-dungeon.png" width="271" height="297" alt="副本狂欢活动"></li>
             <li><img class="activity-card" src="ossweb-img/mobile/activity/card-anniversary-month.png" width="271" height="297" alt="周年欢庆月活动"></li>
           </ul>
-          <img class="activity-maple-leaf" src="ossweb-img/mobile/activity/maple-leaf-new.png" width="183" height="183" alt="" loading="lazy">
-
           <!-- 周年活动领取按钮：进入活动奖励页面并上报普通按钮点击。 -->
           <a class="hotspot hotspot--activity-reward" href="javascript:alert('链接缺失')" aria-label="前往获取周年活动奖励" title="前往获取周年活动奖励" data-action="activity-reward" data-track-type="btn" data-track-id="activity-reward" data-track-label="周年活动前往获取"><img class="activity-claim-button" src="ossweb-img/mobile/activity/claim-button-new.png" width="319" height="67" alt="前往获取"></a>
         </div>
@@ -86,7 +94,7 @@
     <p id="feedback-toast" class="feedback-toast" role="status" aria-live="polite" hidden></p>
 
     <div id="booking-modal" class="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title" hidden>
-      <div class="booking-modal__backdrop" data-action="close-booking"></div>
+      <div class="booking-modal__backdrop" data-action="close-booking" data-track-type="btn" data-track-id="booking-backdrop-close" data-track-label="点击遮罩关闭预约弹层"></div>
       <section class="booking-modal__content">
         <!-- 关闭预约弹层按钮：关闭当前预约弹层并上报普通按钮点击。 -->
         <a class="booking-modal__close" href="#booking-modal" aria-label="关闭预约弹层" title="关闭" data-action="close-booking" data-track-type="btn" data-track-id="booking-close" data-track-label="关闭预约弹层">×</a>
@@ -115,7 +123,7 @@
       };
       if (typeof pgvMain === "function") pgvMain();
     </script>
+    <script src="//ossweb-img.qq.com/images/js/eas/eas.js"></script>
     <script src="js/index.js"></script>
-    <script src="//game.gtimg.cn/images/js/2018foot/foot.js"></script>
   </body>
 </html>

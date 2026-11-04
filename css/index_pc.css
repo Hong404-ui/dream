@@ -1,0 +1,61 @@
+@import "reset.css";
+:root { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; color: #62391f; background: #f7dfb6; }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-width: 320px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.page { position: relative; width: 19.2rem; height: 52rem; margin: auto; overflow: hidden; background: url("../ossweb-img/page-background.png") center top / 100% 100% no-repeat; }
+.hotspot, .image-button { position: absolute; z-index: 2; display: block; padding: 0; cursor: pointer; background: transparent; text-decoration: none; }
+.hotspot:focus-visible, .image-button:focus-visible { outline: 4px solid #5b236f; outline-offset: 4px; }
+.hotspot img, .image-button img { display: block; width: 100%; height: auto; }
+.image-button:hover, .hotspot:hover { filter: brightness(1.12); }
+.image-button:active, .hotspot:active { transform: scale(.97); }
+.hero-download { top: 10.97rem; left: 8.04rem; width: 3.19rem; }
+.official-entry { top: .72rem; left: 12.42rem; width: 2.09rem; }
+.activity, .benefits, .exclusive, .download { position: absolute; inset: 0; pointer-events: none; }
+.activity-heading { position: absolute; left: 4.5rem; top: 12.2rem; width: 10.5rem; height: auto; }
+.activity-board { position: absolute; left: 3.32rem; top: 13.82rem; width: 12.55rem; height: auto; }
+.activity-leaf { position: absolute; z-index: 1; left: 2.3rem; top: 21.75rem; width: 3.2rem; height: auto; }
+.activity-grid { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
+.activity-grid li { position: absolute; width: 2.71rem; height: 2.97rem; }
+.activity-grid li:nth-child(1) { left: 3.86rem; top: 14.57rem; }
+.activity-grid li:nth-child(2) { left: 6.76rem; top: 14.57rem; }
+.activity-grid li:nth-child(3) { left: 9.67rem; top: 14.57rem; }
+.activity-grid li:nth-child(4) { left: 12.57rem; top: 14.57rem; }
+.activity-grid li:nth-child(5) { left: 3.86rem; top: 17.92rem; }
+.activity-grid li:nth-child(6) { left: 6.76rem; top: 17.92rem; }
+.activity-grid li:nth-child(7) { left: 9.67rem; top: 17.92rem; }
+.activity-grid li:nth-child(8) { left: 12.57rem; top: 17.92rem; }
+.activity-grid li:nth-child(9) { left: 6.76rem; top: 21.2rem; }
+.activity-grid li:nth-child(10) { left: 9.67rem; top: 21.2rem; }
+.activity-grid img { display: block; width: 100%; height: auto; }
+.activity-button { top: 24.35rem; left: 8.04rem; width: 3.19rem; pointer-events: auto; }
+.benefits-board { position: absolute; left: 1.9rem; top: 27.9rem; width: 15.4rem; height: auto; }
+.benefits-slogan { position: absolute; left: 7.48rem; top: 29.49rem; width: 4.33rem; height: auto; }
+.benefits-four { position: absolute; inset: 0; }
+.benefits-four img { position: absolute; top: 29.93rem; display: block; width: 2.71rem; height: auto; }
+.benefits-four img:nth-child(1) { left: 3.74rem; }
+.benefits-four img:nth-child(2) { left: 6.74rem; }
+.benefits-four img:nth-child(3) { left: 9.73rem; }
+.benefits-four img:nth-child(4) { left: 12.73rem; }
+.prize-switch-frame { position: absolute; left: 3.74rem; top: 33.05rem; width: 5.68rem; height: 2.98rem; overflow: hidden; }
+.benefit-prize { display: block; height: auto; }
+.prize-switch { position: absolute; top: -.6rem; left: 0; width: 5.68rem; }
+.prize-team { position: absolute; left: 9.74rem; top: 33.05rem; width: 5.7rem; }
+.booking-button { top: 36.18rem; left: 5.07rem; width: 2.9rem; pointer-events: auto; }
+.team-button { top: 36.28rem; left: 11.31rem; width: 2.67rem; pointer-events: auto; }
+.server-info { position: absolute; inset: 0; pointer-events: none; }
+.server-info img, .server-date-bg { position: absolute; display: block; }
+.server-board { left: 1.86rem; top: 38.8rem; width: 15.4rem; height: auto; }
+.server-wechat { left: 6.1rem; top: 40.34rem; width: 2.71rem; height: auto; }
+.server-qq { left: 10.45rem; top: 40.34rem; width: 2.5rem; height: auto; }
+.server-date-bg { left: 7.75rem; top: 40.81rem; width: 3.76rem; height: .56rem; border-radius: .28rem; background: #f6cc86; }
+.server-date { left: 8.08rem; top: 40.94rem; width: 3.08rem; height: auto; }
+.exclusive > img { position: absolute; top: 44.47rem; left: 7.51rem; width: 4.5rem; height: auto; }
+.claim-button { top: 47.65rem; left: 8.09rem; width: 3.19rem; pointer-events: auto; }
+.download .qr-frame { position: absolute; left: 6.39rem; top: 48.8rem; width: 6.7rem; height: auto; }
+.download .qr-news, .download .qr-download { position: absolute; top: 49.16rem; width: 2.18rem; height: auto; }
+.download .qr-news { left: 7.04rem; }
+.download .qr-download { left: 10.19rem; }
+.notice { position: fixed; z-index: 10; left: 50%; bottom: 24px; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 12px 20px; color: white; background: #883a25; border-radius: 4px; box-shadow: 0 4px 16px #0004; font-size: 14px; text-align: center; }
+@media (max-width: 767px) { .notice { bottom: 12px; } }
+@media (prefers-reduced-motion: no-preference) { .image-button, .hotspot { transition: filter .15s ease, transform .15s ease; } }
